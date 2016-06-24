@@ -1,7 +1,7 @@
 #!/bin/bash
 
 base_dir="${HOME}/.texpander/"
-name=$(zenity --entry --title="Text Expansion" --text="Abbreviation")
+name=$(zenity --entry --title="Texpander" --text="Abbreviation")
 path=$base_dir$name
 path+=".txt"
 
@@ -25,4 +25,3 @@ then
     zenity --error --text="Abbreviation not found:\n$name"
   fi
 fi
-
