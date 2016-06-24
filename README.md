@@ -28,6 +28,8 @@ The text expansion files reside in your `~/.texpander` directory. Name the files
 
 I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
 
+![Texpander - text snippets for Ubuntu](http://leehblue.com/show/texpander-screenshot.png)
+
 To use Texpander:
 
 - Start writing an email to somebody (or start editing any document)
