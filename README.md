@@ -1,6 +1,6 @@
 # Texpander
 
-A simple text expander for Linux. It is sort of like Autokey, except it works of text files that you put in you `~/.texpander` directory. Texpander is a bash script that uses xclip, xdotool, and zenity to let you type an abbreviation for something and it expands to whatever you have in the matching text file.
+Texpander is a simple text expander for Linux. It is sort of like Autokey, except it works off of text files that you put in you `~/.texpander` directory. Texpander is a bash script that uses xclip, xdotool, and zenity to let you type an abbreviation for something and it expands to whatever you have in the matching text file.
 
 ## Installation
 
@@ -14,7 +14,7 @@ Texpander relies on a couple command line tools:
 - zenity
 - xclip
 
-If those aren't already installed on your system you can probably grab them from your distros package manage without any trouble. For example for Ubuntu you can get what you need with the following commands.
+If those aren't already installed on your system you can probably grab them from your distros package manager without any trouble. For example for Ubuntu you can get what you need with the following commands.
 
 ```
 sudo apt install xclip 
@@ -24,18 +24,20 @@ sudo apt install zenity
 
 ## Usage
 
-The text expansion files reside in your `~/.texpander` directory. Name the files in the format of `abbreviation.txt` where `abbreviation` is the thing you want to type and the contents of the file is what you want to have dropped into your file as the expanded text.
+The text expansion files reside in your `~/.texpander` directory. Name the files in the format of `abbreviation.txt` where `abbreviation` is the thing you want to type and the content of the file is what you want to have pasted into your document.
 
-I have `crtl+space` assigned to run texpander. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
+I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
 
-- Start writing an email to somebody
-- Put my cursor where I want my email signature to be pasted in
+To use Texpander:
+
+- Start writing an email to somebody (or start editing any document)
+- Put your cursor where you want your email signature to be pasted
 - Type `ctrl+space` (or whatever keyboard shortcut you set up)
 - A zenity window will appear asking for your abbreviation
-- Type in `sig66` hit Enter (or click "OK")
-- The contents of `~/.texpander/sig66.txt` is pasted into the email
+- Type in `sig66` and hit Enter (or click "OK")
+- The contents of `~/.texpander/sig66.txt` is pasted into your document
 
-I also use Vim for all kinds of writing and coding. I've got some texpander files that I use in Vim. I always use Vim in the terminal which works a little differently from other GUI apps in that you have to type `ctrl+space+v` to paste stuff. In texpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+space+v` if not then it will paste normally as `ctrl+v`
+If I'm not in a web browser I'm in the terminal working in Vim. I've got some texpander files that I use in Vim. The terminal works a little differently from other GUI apps in that you have to type `ctrl+space+v` to paste stuff. In texpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+space+v` if not then it will paste normally as `ctrl+v`
 
 ## Contributing
 
