@@ -1,9 +1,9 @@
 #!/bin/bash
 
 base_dir="${HOME}/.texpander/"
-name=$(zenity --entry --title="Texpander" --text="Abbreviation")
+abbrvs=$(ls $base_dir)
+name=$(zenity --list --column=Abbreviations $abbrvs)
 path=$base_dir$name
-path+=".txt"
 
 if [[ $name ]]
 then
