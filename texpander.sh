@@ -1,12 +1,8 @@
 #!/bin/bash
 
 base_dir="${HOME}/.texpander/"
-abbreviations=""
-for entry in "$base_dir"/*
-do
-  abbreviations+="${entry##*/}\n"
-done
-name=$(zenity --entry --title="Texpander" --text="Abbreviation\n\n$abbreviations")
+abbreviations=$(ls $base_dir | sed -e 's/\..*$//')
+name=$(zenity --entry --title="Texpander" --text="Abbreviation\n\n$abbreviations\n")
 path=$base_dir$name
 path+=".txt"
 
