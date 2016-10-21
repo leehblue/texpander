@@ -1,7 +1,12 @@
 #!/bin/bash
 
 base_dir="${HOME}/.texpander/"
-name=$(zenity --entry --title="Texpander" --text="Abbreviation")
+abbreviations=""
+for entry in "$base_dir"/*
+do
+  abbreviations+="${entry##*/}\n"
+done
+name=$(zenity --entry --title="Texpander" --text="Abbreviation\n\n$abbreviations")
 path=$base_dir$name
 path+=".txt"
 
