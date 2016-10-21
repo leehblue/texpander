@@ -7,9 +7,13 @@ path+=".txt"
 
 if [[ $name ]]
 then
-  pid=$(xdotool getactivewindow getwindowpid)
-  proc_name=$(cat /proc/$pid/comm)
+  #pid=$(xdotool getactivewindow getwindowpid)
 
+  pid=$(xdotool getwindowfocus getwindowpid)
+  # zenity --error --text="PID: $pid"
+
+  proc_name=$(cat /proc/$pid/comm)
+  # zenity --error --text="Proc name: $proc_name"
 
   if [ -e "$path" ]
   then
