@@ -51,11 +51,19 @@ If I'm not in a web browser I'm in the terminal working in Vim. I've got some te
 
 ## History
 
-**June 23, 2016**
+**Version 1.1 - November 7, 2016**
+
+- New: Using zenity list to show abbreviations. You can still just type the abbreviations and then hit Enter, or select your choice with the mouse and click OK.
+- New: The value in the clipboard is preserved so it is not overwritten when expanding an abbreviation
+- New: Add pasting support for the terminator terminal emulator pasting
+- Update: Use the focus window rather than the active window as the target for pasting
+
+
+**Version 1.0.1 - June 23, 2016**
 
 - New: If the active window is a terminal paste with `ctrl+shift+v`
 
-**May 17, 2016**
+**Version 1.0 - May 17, 2016**
 
 - Initial release
 
