@@ -18,6 +18,7 @@ then
 
   if [ -e "$path" ]
   then
+    clipboard=$(xclip -o)
     xclip -selection c -i "$path"
 
     if [[ $proc_name =~ 'terminal' ]]
@@ -26,6 +27,7 @@ then
     else
       xdotool key ctrl+v
     fi
+    echo $clipboard | xclip -selection c
   else
     zenity --error --text="Abbreviation not found:\n$name"
   fi
