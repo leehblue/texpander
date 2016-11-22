@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Version: 1.1.1
+# Release: November 22, 2016
+
 base_dir="${HOME}/.texpander/"
 abbrvs=$(ls $base_dir)
 name=$(zenity --list --title=Texpander --column=Abbreviations $abbrvs)

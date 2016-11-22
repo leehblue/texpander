@@ -28,9 +28,31 @@ The text expansion files reside in your `~/.texpander` directory. Name the files
 
 I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
 
-![Texpander - text snippets for Ubuntu](http://leehblue.com/show/texpander-screenshot.png)
+![Texpander - text snippets for Ubuntu](https://lee.blue/share/texpander-demo.gif)
 
-To use Texpander:
+### Setting Up Custom Keyboard Shortcuts
+
+This process may be slightly different for you depending on what desktop environment and Linux distribution you have. For Ubuntu running Unity, here is the process.
+
+Open up the System Settings panel
+
+![System Settings Panel](https://lee.blue/share/system-settings-keyboard.png)
+
+Click the **Keyboard** icon to enter custom keyboard shortcuts
+
+![Custom Keyboard Shortcuts](https://lee.blue/share/custom-keyboard-shortcuts.png)
+
+Define a custom shortcut by clicking the **+** icon at the bottom of the Shortcuts panel
+
+![Custom Shortcut](https://lee.blue/share/custom-shortcut.png)
+
+Assign a keyboard shortcut to launch Texpander by clicking as shown here
+
+![Set keyboard shortcut](https://lee.blue/share/set-keyboard-shortcut.png)
+
+### How To Use Texpander
+
+After setting up the keyboard shortcut to launch Texpander, to use Texpander:
 
 - Start writing an email to somebody (or start editing any document)
 - Put your cursor where you want your email signature to be pasted
@@ -50,6 +72,11 @@ If I'm not in a web browser I'm in the terminal working in Vim. I've got some te
 5. Submit a pull request :D
 
 ## History
+
+**Version 1.1.1 - November 22, 2016**
+
+- Update: Look for "terminal" pattern anywhere in proc name to match names like "gnome-terminal" for pasting text into terminals.
+- Update: Update README with instructions for the new selection list functionality
 
 **Version 1.1 - November 7, 2016**
 
