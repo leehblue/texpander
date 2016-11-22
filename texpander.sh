@@ -10,13 +10,14 @@ if [[ $name ]]
 then
   pid=$(xdotool getwindowfocus getwindowpid)
   proc_name=$(cat /proc/$pid/comm)
+  zenity --error --text=$proc_name
 
   if [ -e "$path" ]
   then
     clipboard=$(xclip -selection clipboard -o)
     xclip -selection c -i "$path"
 
-    if [[ $proc_name =~ ^(terminal|terminator) ]]
+    if [[ $proc_name =~ (terminal|terminator) ]]
     then
       xdotool key ctrl+shift+v
     else
