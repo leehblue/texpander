@@ -61,7 +61,7 @@ After setting up the keyboard shortcut to launch Texpander, to use Texpander:
 - Type in `sig66` and hit Enter (or click "OK")
 - The contents of `~/.texpander/sig66.txt` is pasted into your document
 
-If I'm not in a web browser I'm in the terminal working in Vim. I've got some texpander files that I use in Vim. The terminal works a little differently from other GUI apps in that you have to type `ctrl+space+v` to paste stuff. In texpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+space+v` if not then it will paste normally as `ctrl+v`
+If I'm not in a web browser I'm in the terminal working in Vim. I've got some texpander files that I use in Vim. The terminal works a little differently from other GUI apps in that you have to type `ctrl+shift+v` to paste stuff. In texpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+shift+v` if not then it will paste normally as `ctrl+v`
 
 ## Contributing
 
