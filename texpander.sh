@@ -25,6 +25,8 @@ then
     else
       xdotool key ctrl+v
     fi
+    
+    sleep 1s
 
     echo $clipboard | xclip -selection c
   else
