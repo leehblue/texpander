@@ -10,7 +10,7 @@ abbrvs=$(ls $base_dir)
 found=0
 while [ $found -eq 0 ]
 do
-  name=$(zenity --entry --title=Texpander --text="Enter your filename here (without .txt):" --entry-text "FileName")
+  name=$(zenity --entry --title=Texpander --text="Enter your filename here:" --entry-text "FileName (without .txt)")
 
   if [[ $? -eq 1 ]]
   then
