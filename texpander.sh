@@ -11,7 +11,14 @@ found=0
 while [ $found -eq 0 ]
 do
   name=$(zenity --entry --title=Texpander --text="Enter your filename here (without .txt):" --entry-text "FileName")
+
+  if [[ $? -eq 1 ]]
+  then
+    exit
+  fi
+
   path=$base_dir$name$format
+
   if [ -f $path ]
   then
     found=1
