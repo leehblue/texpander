@@ -4,10 +4,19 @@
 # Release: November 22, 2016
 
 base_dir="${HOME}/.texpander/"
+format=".txt"
 abbrvs=$(ls $base_dir)
-name=$(zenity --list --title=Texpander --column=Abbreviations $abbrvs)
 
-path=$base_dir$name
+found=0
+while [ $found -eq 0 ]
+do
+  name=$(zenity --entry --title=Texpander --text="Enter your filename here (without .txt):" --entry-text "FileName")
+  path=$base_dir$name$format
+  if [ -f $path ]
+  then
+    found=1
+  fi
+done
 
 if [[ $name ]]
 then
@@ -25,7 +34,7 @@ then
     else
       xdotool key ctrl+v
     fi
-    
+
     sleep 1s
 
     echo $clipboard | xclip -selection c
