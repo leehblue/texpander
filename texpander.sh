@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Version: 1.1.1
-# Release: November 22, 2016
+# Version: 1.2
+# Release: September 11, 2017
 
 base_dir="${HOME}/.texpander/"
 abbrvs=$(ls $base_dir)
@@ -19,7 +19,7 @@ then
     clipboard=$(xclip -selection clipboard -o)
     xclip -selection c -i "$path"
 
-    if [[ $proc_name =~ (terminal|terminator) ]]
+    if [ -n $proc_name ] || [[ $proc_name =~ (termin|nano) ]]
     then
       xdotool key ctrl+shift+v
     else
