@@ -9,7 +9,7 @@ proc_name=$(cat /proc/$pid/comm)
 base_dir="${HOME}/.texpander/"
 abbrvs=$(ls $base_dir)
 
-name=$(zenity --list --title=Texpander --column=Abbreviations $abbrvs)
+name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
 
 path=$base_dir$name
 
