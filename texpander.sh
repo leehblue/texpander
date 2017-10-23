@@ -20,7 +20,7 @@ then
     clipboard=$(xclip -selection clipboard -o)
     xclip -selection c -i "$path"
 
-    if [[ $proc_name =~ (termin|nano) ]]
+    if [[ $proc_name =~ (termin|nano|konsole) ]]
     then
       xdotool key ctrl+shift+v
     else
