@@ -12,12 +12,12 @@ Texpander relies on a couple command line tools:
 
 - xdotool
 - zenity
-- xclip
+- xsel
 
 If those aren't already installed on your system you can probably grab them from your distros package manager without any trouble. For example for Ubuntu you can get what you need with the following commands.
 
 ```
-sudo apt install xclip 
+sudo apt install xsel 
 sudo apt install xdotool 
 sudo apt install zenity
 ```
@@ -72,6 +72,12 @@ If I'm not in a web browser I'm in the terminal working in Vim. I've got some te
 5. Submit a pull request :D
 
 ## History
+
+**Version 2.0 - November 24, 2017**
+
+- Change: Replace `xclip` with `xsel` because `xclip` tends to strip newlines when pasting into certain application like Gmail on Firefox.
+- Change: Use `shift+Insert` to be compatible with more programs for pasting rather than trying to figure out if the current app should use `ctrl+v` or `ctrl+shift+v`.
+- New: Add an optional `type` mode so if pasting doesn't work, the `xdotool` can `type` (rather than paste) text into the active window.
 
 **Version 1.1.1 - November 22, 2016**
 
