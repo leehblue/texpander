@@ -7,7 +7,8 @@ pid=$(xdotool getwindowfocus getwindowpid)
 proc_name=$(cat /proc/$pid/comm)
 
 base_dir="${HOME}/.texpander/"
-abbrvs=$(ls $base_dir)
+cd $base_dir
+abbrvs=$(find * -type f)
 
 name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
 
