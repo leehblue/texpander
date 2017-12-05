@@ -6,14 +6,15 @@
 pid=$(xdotool getwindowfocus getwindowpid)
 proc_name=$(cat /proc/$pid/comm)
 
-base_dir="${HOME}/.texpander/"
-abbrvs=$(ls $base_dir)
+base_dir="${HOME}/.texpander"
+shopt -s globstar
+abbrvs=$(find "${base_dir}" -type f | sed "s?^${base_dir}/??g" )
 
 name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
 
-path=$base_dir$name
+path="${base_dir}/${name}"
 
-if [[ $name ]]
+if [ -f "${base_dir}/${name}" ]
 then
   if [ -e "$path" ]
   then
@@ -48,6 +49,6 @@ then
     echo $clipboard | xsel -b -i
 
   else
-    zenity --error --text="Abbreviation not found:\n$name"
+    zenity --error --text="Abbreviation not found:\n${name}"
   fi
 fi
