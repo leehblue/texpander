@@ -1,6 +1,6 @@
 # Texpander
 
-Texpander is a simple text expander for Linux. It is sort of like Autokey, except it works off of text files that you put in you `~/.texpander` directory. Texpander is a bash script that uses xclip, xdotool, and zenity to let you type an abbreviation for something and it expands to whatever you have in the matching text file.
+Texpander is a simple text expander for Linux. It is sort of like Autokey, except it works off of text files that you put in your `~/.texpander` directory. Texpander is a bash script that uses xclip, xdotool, and zenity to let you type an abbreviation for something and it expands to whatever you have in the matching text file.
 
 ## Installation
 
@@ -24,7 +24,7 @@ sudo apt install zenity
 
 ## Usage
 
-The text expansion files reside in your `~/.texpander` directory. Name the files in the format of `abbreviation.txt` where `abbreviation` is the thing you want to type and the content of the file is what you want to have pasted into your document. You can nest files inside folders and they will show up as `path/to/file.txt` in the list.
+The text expansion files reside in your `~/.texpander` directory and can be organized in subdirectories. Name the files in the format of `abbreviation` where the filename is the thing you want to type and the content of the file is what you want to have pasted into your document.
 
 I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
 
@@ -59,7 +59,7 @@ After setting up the keyboard shortcut to launch Texpander, to use Texpander:
 - Type `ctrl+space` (or whatever keyboard shortcut you set up)
 - A zenity window will appear asking for your abbreviation
 - Type in `sig66` and hit Enter (or click "OK")
-- The contents of `~/.texpander/sig66.txt` is pasted into your document
+- The contents of `~/.texpander/sig66` is pasted into your document
 
 If I'm not in a web browser I'm in the terminal working in Vim. I've got some texpander files that I use in Vim. The terminal works a little differently from other GUI apps in that you have to type `ctrl+shift+v` to paste stuff. In texpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+shift+v` if not then it will paste normally as `ctrl+v`
 
