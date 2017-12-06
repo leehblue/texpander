@@ -24,7 +24,7 @@ sudo apt install zenity
 
 ## Usage
 
-The text expansion files reside in your `~/.texpander` directory. Name the files in the format of `abbreviation.txt` where `abbreviation` is the thing you want to type and the content of the file is what you want to have pasted into your document.
+The text expansion files reside in your `~/.texpander` directory. Name the files in the format of `abbreviation.txt` where `abbreviation` is the thing you want to type and the content of the file is what you want to have pasted into your document. You can nest files inside folders and they will show up as `path/to/file.txt` in the list.
 
 I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
 
