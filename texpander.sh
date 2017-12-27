@@ -6,7 +6,7 @@
 pid=$(xdotool getwindowfocus getwindowpid)
 proc_name=$(cat /proc/$pid/comm)
 
-base_dir="${HOME}/.texpander"
+base_dir=$(realpath "${HOME}/.texpander")
 shopt -s globstar
 abbrvs=$(find "${base_dir}" -type f | sed "s?^${base_dir}/??g" )
 
