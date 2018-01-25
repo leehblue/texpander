@@ -22,11 +22,11 @@ then
     clipboard=$(xsel -b -o)
 
     # Put text in primary buffer for Shift+Insert pasting
-    cat $path | xsel -p -i 
+    echo -n "$(tac "$path")" | tac | xsel -p -i 
 
     # Put text in clipboard selection for apps like Firefox that 
     # insist on using the clipboard for all pasting
-    cat $path | xsel -b -i 
+    echo -n "$(tac "$path")" | tac | xsel -b -i
 
     # Paste text into current active window
     sleep 0.3
