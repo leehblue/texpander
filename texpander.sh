@@ -3,11 +3,24 @@
 # Version: 2.0
 # Release: November 24, 2017
 
+# Get window id, pass to getwindow pid to output the pid of current window
 pid=$(xdotool getwindowfocus getwindowpid)
+
+# Store text name of process based on pid of current window
 proc_name=$(cat /proc/$pid/comm)
 
+# If ~/.texpander directory does not exist, create it
+if [ ! -d ${$HOME}/.texpander ]; then
+    mkdir ${$HOME}/.texpander
+fi
+
+# Store base directory path, expand complete path using HOME environemtn variable
 base_dir=$(realpath "${HOME}/.texpander")
+
+# Set globstar shell option (turn on) ** for filename matching glob patterns on subdirectories of ~/.texpander
 shopt -s globstar
+
+# Find regular files in base_dir, pipe output to sed
 abbrvs=$(find "${base_dir}" -type f | sed "s?^${base_dir}/??g" )
 
 name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
