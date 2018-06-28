@@ -10,8 +10,8 @@ pid=$(xdotool getwindowfocus getwindowpid)
 proc_name=$(cat /proc/$pid/comm)
 
 # If ~/.texpander directory does not exist, create it
-if [ ! -d ${$HOME}/.texpander ]; then
-    mkdir ${$HOME}/.texpander
+if [ ! -d ${HOME}/.texpander ]; then
+    mkdir ${HOME}/.texpander
 fi
 
 # Store base directory path, expand complete path using HOME environemtn variable
