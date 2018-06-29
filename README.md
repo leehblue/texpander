@@ -28,6 +28,14 @@ The text expansion files reside in your `~/.texpander` directory and can be orga
 
 I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an email, it doesn't matter if I'm in gmail (using Firefox, Chrome, Opera, or Vivaldi), Thunderbird, Vim, or Nylas, the workflow is the same. I have a couple different email signatures that I use. If I am writing to somebody about Cart66, the [WordPress Shopping Cart plugin](https://cart66.com), I'll use my Cart66 signature. I have a file `~/.texpander/sig66.txt` that has all my contact info and so forth for Cart66.  
 
+You can perform variable substitution on expansion files, with optional default values.  Repeated variables will only prompt once, but if you use a default, be sure it is on the first occurrence or it will be dropped.  (The format is the same as TextExpander, so you can more easily import your Mac-using coworkers snippets.)
+
+```
+mkdir %filltext:name=DIRECTORY:default=root_tmpdir%
+chmod 755 %filltext:name=DIRECTORY%
+chown root. %filltext:name=DIRECTORY%
+```
+
 ![Texpander - text snippets for Ubuntu](https://lee.blue/share/texpander-demo.gif)
 
 ### Setting Up Custom Keyboard Shortcuts

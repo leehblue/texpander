@@ -31,15 +31,32 @@ if [ -f "${base_dir}/${name}" ]
 then
   if [ -e "$path" ]
   then
+    # Determine if the text requires variable substitution
+    if grep '%filltext' $path
+    then
+      # variable pattern is either
+      # "%filltext:name=VAR%"
+      # "%filltext:name=VAR:default=DEFAULT%"
+      subpat=''
+      while read var def; do
+        val=$(zenity --entry --title=Texpander --text="$var" --entry-text="$def")
+        # build a sed pattern to replace the filltext
+        subpat+="s/%filltext:name=$var\(:default=[^%]\+\)\?%/$val/;"
+      done < <(grep -E -o '%filltext:name=[[:alnum:]]+(:default=[[:alnum:][:space:]]+)?%' $path |sed 's/%//g; s/\(name=\|default=\|filltext:\)//g; y/:/ /;' |sort -u -k1,1)
+      # grep returns just the matched text
+      # sed cleans up and returns lines of "name default text"
+      # sort removes duplicate names
+    fi
+
     # Preserve the current value of the clipboard
     clipboard=$(xsel -b -o)
 
     # Put text in primary buffer for Shift+Insert pasting
-    echo -n "$(tac "$path")" | tac | xsel -p -i 
+    echo -n "$(cat "$path")" | sed "$subpat" | xsel -p -i
 
     # Put text in clipboard selection for apps like Firefox that 
     # insist on using the clipboard for all pasting
-    echo -n "$(tac "$path")" | tac | xsel -b -i
+    echo -n "$(cat "$path")" | sed "$subpat" | xsel -b -i
 
     # Paste text into current active window
     sleep 0.3
