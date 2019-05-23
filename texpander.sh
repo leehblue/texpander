@@ -21,7 +21,7 @@ base_dir=$(realpath "${HOME}/.texpander")
 shopt -s globstar
 
 # Find regular files in base_dir, pipe output to sed
-abbrvs=$(find "${base_dir}" -type f | sort | sed "s?^${base_dir}/??g" )
+abbrvs=$(find "${base_dir}" -not -path "${base_dir}/\.*" -type f | sort | sed "s?^${base_dir}/??g" )
 
 name=$(zenity --list --title=Texpander --width=275 --height=400 --column=Abbreviations $abbrvs)
 
