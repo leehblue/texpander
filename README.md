@@ -30,7 +30,7 @@ I have `crtl+space` assigned to run `~/bin/texpander.sh`. So, if I'm typing an e
 
 ### Setting Up Custom Keyboard Shortcuts
 
-This process may be slightly different for you depending on what desktop environment and Linux distribution you have. I've personally tested this on Pop_OS! and Elementary OS 5.1 but each desktop environment has a slightly different way of setting up keyboard shortcuts. But the bottom line is I just map `Ctrl+Shift+T` to the `texpander.sh` bash script. 
+This process may be slightly different for you depending on what desktop environment and Linux distribution you have. I've personally tested this on Pop!_OS and Elementary OS 5.1 but each desktop environment has a slightly different way of setting up keyboard shortcuts. But the bottom line is I just map `Ctrl+Shift+T` to the `texpander.sh` bash script. 
 
 ### How To Use Texpander
 
