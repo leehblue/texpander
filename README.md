@@ -16,7 +16,7 @@ For this to work one needs
 For arch based linux one can do 
 
 ```
-yay -S rofi-greenclip zsh
+yay -S rofi-greenclip zsh xsel xdotool
 systemctl --user enable greenclip.service
 ```
 
