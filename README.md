@@ -1,3 +1,27 @@
+# ZSH and rofi Version
+
+I wanted some fuzzy feeling in the way I can search in my abbrevations. And some interaction with greenclip.
+
+Two new tools in the spirit of texpander
+
+* texpander.zsh
+* clippy.zsh
+
+For this to work one needs 
+
+* greenclip installed and daemon running
+* rofi installed
+* zsh installed (bash would remove newlines where rofi needs them)
+
+For arch based linux one can do 
+
+```
+yay -S rofi-greenclip zsh xsel xdotool
+systemctl --user enable greenclip.service
+```
+
+follow the rest of the original guide to setup this scipts in your desktop environment.
+
 # Texpander
 
 Texpander is a simple text expander for Linux. It is sort of like Autokey, except it works off of text files that you put in your `~/.texpander` directory. Texpander is a bash script that uses xclip, xdotool, and zenity to let you type an abbreviation for something and it expands to whatever you have in the matching text file.
