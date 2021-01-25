@@ -14,7 +14,7 @@ if [ ! -d ${HOME}/.texpander ]; then
     mkdir ${HOME}/.texpander
 fi
 
-# Store base directory path, expand complete path using HOME environemtn variable
+# Store base directory path, expand complete path using HOME environment variable
 base_dir=$(realpath "${HOME}/.texpander")
 
 # Set globstar shell option (turn on) ** for filename matching glob patterns on subdirectories of ~/.texpander
