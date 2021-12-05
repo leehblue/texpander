@@ -36,12 +36,20 @@ then
     # Preserve the current value of the clipboard
     clipboard=$(xsel -b -o)
 
-    # Put text in primary buffer for Shift+Insert pasting
-    echo -n "$(cat "$path")" | xsel -p -i
-
-    # Put text in clipboard selection for apps like Firefox that 
-    # insist on using the clipboard for all pasting
-    echo -n "$(cat "$path")" | xsel -b -i
+    if [ "${path: -4}" == ".cmd" ]
+    then
+       # Put text in primary buffer for Shift+Insert pasting
+       echo -n $($(cat "$path")) | xsel -p -i
+       # Put text in clipboard selection for apps like Firefox that
+       # insist on using the clipboard for all pasting
+       echo -n $($(cat "$path")) | xsel -b -i
+    else
+       # Put text in primary buffer for Shift+Insert pasting
+       echo -n "$(cat "$path")" | xsel -p -i
+       # Put text in clipboard selection for apps like Firefox that
+       # insist on using the clipboard for all pasting
+       echo -n "$(cat "$path")" | xsel -b -i
+    fi
 
     # Paste text into current active window
     sleep 0.3
