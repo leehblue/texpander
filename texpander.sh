@@ -21,7 +21,7 @@ base_dir=$(realpath "${HOME}/.texpander")
 shopt -s globstar
 
 # Find regular files in base_dir, pipe output to sed
-abbrvs=$(find "${base_dir}" -type f | sort | sed "s?^${base_dir}/??g")
+abbrvs=$(find "${base_dir}" -type f \( ! -iname ".*" \) | sort | sed "s?^${base_dir}/??g")
 
 # 'Echo'ing the options instead of passing them directly
 # to zenity allows names like '+1' or '-1'
